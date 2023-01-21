@@ -1,0 +1,3 @@
+prefix: "#"
+format: "§5StaffChat§g+ §f%player% §7» §a%message%"
+permission: "staffchatplus.perm"
