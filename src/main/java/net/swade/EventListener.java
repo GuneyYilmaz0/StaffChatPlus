@@ -10,6 +10,7 @@ import cn.nukkit.utils.Config;
 
 public class EventListener implements Listener {
 
+    @SuppressWarnings("unused")
     @EventHandler(priority = EventPriority.NORMAL)
     public void playerChat(PlayerChatEvent event) {
         if (event.isCancelled()) return;
@@ -21,7 +22,7 @@ public class EventListener implements Listener {
         event.setCancelled(true);
         String format = config.getString("format");
         format = format.replace("%player%", player.getName());
-        message = message.substring(1);
+        message = message.substring(config.getString("prefix").length());
         format = format.replace("%message%", message);
         for (Player value : Server.getInstance().getOnlinePlayers().values()) {
             if (value.hasPermission(config.getString("permission"))) {

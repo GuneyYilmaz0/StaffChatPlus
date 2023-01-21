@@ -6,9 +6,8 @@ import lombok.Setter;
 
 public class Main extends PluginBase {
 
-    @Getter
-    @Setter
-    private static Main instance;
+    @Getter @Setter private static Main instance;
+
     @Override
     public void onLoad() {
         setInstance(this);
